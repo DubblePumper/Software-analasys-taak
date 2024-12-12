@@ -159,7 +159,7 @@
                   <li><a class="dropdown-item" href="#">Contact</a></li>
                 </ul>
               </li>
-              <div class="vr"></div>
+               <li class="vr"></li>
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -178,7 +178,7 @@
                   <li><a class="dropdown-item" href="#">Lezen</a></li>
                 </ul>
               </li>
-              <div class="vr"></div>
+               <li class="vr"></li>
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -197,7 +197,7 @@
                 </ul>
               </li>
             </ul>
-            <a class="navbar-icon" href="#">
+            <a title="icon" class="navbar-icon" href="#">
               <i class="bi bi-person"></i>
             </a>
           </div>
@@ -205,31 +205,37 @@
       </nav>
     </header>
     <!-- END NAVBAR CHANGE  -->
-    <main class="container w-100 mt-5 pb-5 pt-3 bg-secondary-subtle rounded">
-      <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
-          <h2 class="text-center pb-5">Registratie</h2>
-          <form>
+    <main class="container w-100 mt-5 pb-5 pt-3 bg-secondary-subtle rounded mb-5">
+      <div class="row justify-content-center border">
+        <div class="col-md-8 col-lg-6 ">
+          <h2 class="text-center pb-3">Registratie</h2>
+          <form >
             <div class="mb-3">
               <label for="familienaam" class="form-label"
                 ><span class="text-danger">* </span>Familienaam</label
               >
               <input
                 type="text"
-                class="form-control"
+                class="form-control  is-invalid"
                 id="familienaam"
                 required
               />
+              <div id="emailFeedback" class="invalid-feedback">
+                Vul een geldig familienaam in.
+              </div>
             </div>
             <div class="mb-3">
               <label for="voornaam" class="form-label"
                 ><span class="text-danger">* </span>Voornaam</label
               >
-              <input type="text" class="form-control" id="voornaam" required />
+              <input type="text" class="form-control  is-invalid" id="voornaam" required />
+              <div id="emailFeedback" class="invalid-feedback">
+                Vul een geldig voornaam in.
+              </div>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label"
-                ><span class="text-danger">* </span>Email adres</label
+                ><span class="text-danger">* </span>E-mailadres</label
               >
               <input
                 type="email"
