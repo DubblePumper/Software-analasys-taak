@@ -20,12 +20,17 @@
     <link rel="stylesheet" href="style.css" />
 
     <style>
-        /* colors */
+      /* colors */
       .bruin {
         color: #3c3744;
       }
       .blauw {
         color: #090c9b;
+      }
+
+      .btn-primary {
+        background-color: #090c9b !important;
+        border-color: #090c9b !important;
       }
       .lichtblauw {
         color: #3066be;
@@ -42,12 +47,47 @@
       .achtergrondDonkerGrijs {
         color: #333;
       }
+      /* bootstrap classes */
+      .w-10 {
+        width: 10%;
+      }
+
+      .w-20 {
+        width: 20%;
+      }
+
+      .w-30 {
+        width: 30%;
+      }
+
+      .w-40 {
+        width: 40%;
+      }
+
+      .w-60 {
+        width: 60%;
+      }
+
+      .w-70 {
+        width: 70%;
+      }
+
+      .w-80 {
+        width: 80%;
+      }
+
+      .w-90 {
+        width: 90%;
+      }
 
       /* other */
-      .navbar-brand img,
+      .navbar-brand img {
+        width: 80px;
+        height: auto;
+      }
       .navbar-icon i {
-        width: 40px;
-        height: 32px;
+        width: 500px;
+        height: 500px;
       }
       .navbar-icon i {
         font-size: 1.5rem;
@@ -56,19 +96,26 @@
   </head>
   <body>
     <header class="container">
-      <nav class="achtergrondDonkerGrijs navbar bg-dark-subtle ">
-        <div class="container d-flex justify-content-between align-items-center">
-          <a class="navbar-brand" href="#">
-            <img
-              src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg"
-              alt="Bootstrap"
-              width="40"
-              height="32"
-            />
-          </a>
+      <nav class="achtergrondDonkerGrijs navbar bg-dark-subtle">
+        <div
+          class="container d-flex justify-content-between align-items-center"
+        >
+        <a class="navbar-brand" href="#">
+          <img
+            src="/mockups/img/logobutbetter.png"
+            alt="logo"
+
+          />
+        </a>
           <ul class="nav justify-content-center mx-auto bg-white">
             <li class="nav-item dropdown border border-black border-end-0">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 Home
               </a>
               <ul class="dropdown-menu">
@@ -77,8 +124,14 @@
                 <li><a class="dropdown-item" href="#">Contact</a></li>
               </ul>
             </li>
-            <li class="nav-item dropdown  border border-black">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li class="nav-item dropdown border border-black">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 Optiek
               </a>
               <ul class="dropdown-menu">
@@ -89,8 +142,14 @@
                 <li><a class="dropdown-item" href="#">Lezen</a></li>
               </ul>
             </li>
-            <li class="nav-item dropdown  border border-black  border-start-0">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li class="nav-item dropdown border border-black border-start-0">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 Audiologie
               </a>
               <ul class="dropdown-menu">
@@ -107,32 +166,51 @@
         </div>
       </nav>
     </header>
-    <main class="container mt-5">
+    <!-- ...existing code... -->
+    <main class="container-md w-40 mt-5 pb-5 pt-3 bg-secondary-subtle rounded">
       <div class="row justify-content-center">
-        <div class="col-md-6">
-          <h2 class="text-center">Register</h2>
+        <div class="col-md-8">
+          <h2 class="text-center pb-5">Login</h2>
           <form>
             <div class="mb-3">
-              <label for="username" class="form-label">Username</label>
-              <input type="text" class="form-control" id="username" required>
+              <label for="email" class="form-label"
+                ><span class="text-danger">* </span>Email address</label
+              >
+              <input type="email" class="form-control" id="email" required />
             </div>
             <div class="mb-3">
-              <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" required>
+              <label for="password" class="form-label"
+                ><span class="text-danger">* </span>Password</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                required
+              />
             </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password" required>
+            <!-- remember me -->
+            <div class="form-check mb-3 w-100">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="rememberMe"
+              />
+              <label class="form-check-label" for="rememberMe">
+                Remember me
+              </label>
             </div>
-            <div class="mb-3">
-              <label for="confirmPassword" class="form-label">Confirm Password</label>
-              <input type="password" class="form-control" id="confirmPassword" required>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+            <div class="d-flex justify-content-between pt-2">
+              <a href="#" class="lichtblauw">Forgot password?</a>
+              <a href="#" class="lichtblauw">Create an account</a>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Register</button>
           </form>
         </div>
       </div>
     </main>
+    <!-- ...existing code... -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
