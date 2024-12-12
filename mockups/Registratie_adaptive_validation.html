@@ -80,7 +80,7 @@
         width: 90%;
       }
 
-       /* BEGIN NAVBAR STYLE */
+      /* BEGIN NAVBAR STYLE */
       .navbar-brand img {
         width: 80px;
         height: auto;
@@ -123,7 +123,7 @@
     <!-- NAVBAR DONT CHANGE -->
     <header class="container-fluid">
       <nav
-      class="mt-4 achtergrondDonkerGrijs navbar navbar-expand-lg bg-dark-subtle rounded"
+        class="mt-4 achtergrondDonkerGrijs navbar navbar-expand-lg bg-dark-subtle rounded"
       >
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
@@ -211,47 +211,102 @@
           <h2 class="text-center pb-5">Registratie</h2>
           <form>
             <div class="mb-3">
-              <label for="familienaam" class="form-label"><span class="text-danger">* </span>Familienaam</label>
-              <input type="text" class="form-control" id="familienaam" required />
-              <div class="invalid-feedback">Vul uw familienaam in.</div>
+              <label for="familienaam" class="form-label"
+                ><span class="text-danger">* </span>Familienaam</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="familienaam"
+                required
+              />
             </div>
             <div class="mb-3">
-              <label for="voornaam" class="form-label"><span class="text-danger">* </span>Voornaam</label>
+              <label for="voornaam" class="form-label"
+                ><span class="text-danger">* </span>Voornaam</label
+              >
               <input type="text" class="form-control" id="voornaam" required />
-              <div class="invalid-feedback">Vul uw voornaam in.</div>
             </div>
             <div class="mb-3">
-              <label for="email" class="form-label"><span class="text-danger">* </span>Email address</label>
-              <input type="email" class="form-control" id="email" required />
-              <div class="invalid-feedback">Vul een geldig e-mailadres in.</div>
+              <label for="email" class="form-label"
+                ><span class="text-danger">* </span>Email adres</label
+              >
+              <input
+                type="email"
+                class="form-control is-invalid"
+                id="email"
+                required
+              />
+              <div id="emailFeedback" class="invalid-feedback">
+                Vul een geldig e-mailadres in.
+              </div>
             </div>
             <div class="mb-3">
-              <label for="telefoonnummer" class="form-label">Telefoonnummer</label>
-              <input type="tel" class="form-control" id="telefoonnummer" pattern="[0-9]{10}" />
-              <div class="invalid-feedback">Vul een geldig telefoonnummer in (10 cijfers).</div>
+              <label for="telefoonnummer" class="form-label"
+                >Telefoonnummer</label
+              >
+              <input
+                type="tel"
+                class="form-control is-invalid"
+                id="telefoonnummer"
+                pattern="[0-9]{10}"
+              />
+              <div id="telefoonnummerFeedback" class="invalid-feedback">
+                Vul een geldig telefoonnummer in (10 cijfers).
+              </div>
             </div>
             <div class="mb-3">
-              <label for="password" class="form-label"><span class="text-danger">* </span>Password</label>
-              <input type="password" class="form-control" id="password" required minlength="8" />
-              <div class="invalid-feedback">Wachtwoord moet minimaal 8 tekens bevatten.</div>
+              <label for="password" class="form-label"
+                ><span class="text-danger">* </span>Wachtwoord</label
+              >
+              <input
+                type="password"
+                class="form-control is-invalid"
+                id="password"
+                required
+                minlength="8"
+              />
+              <div id="passwordFeedback" class="invalid-feedback">
+                Wachtwoord moet minimaal 8 tekens bevatten.
+              </div>
             </div>
             <div class="mb-3">
-              <label for="confirmPassword" class="form-label"><span class="text-danger">* </span>Bevestig Wachtwoord</label>
-              <input type="password" class="form-control" id="confirmPassword" required />
-              <div class="invalid-feedback">Wachtwoorden komen niet overeen.</div>
+              <label for="confirmPassword" class="form-label"
+                ><span class="text-danger">* </span>Bevestig Wachtwoord</label
+              >
+              <input
+                type="password"
+                class="form-control is-invalid"
+                id="confirmPassword"
+                required
+              />
+              <div id="confirmPasswordFeedback" class="invalid-feedback">
+                Wachtwoorden komen niet overeen.
+              </div>
             </div>
             <div class="form-check mb-3 w-100">
-              <input class="form-check-input" type="checkbox" value="" id="rememberMe" />
-              <label class="form-check-label" for="rememberMe">Onthou mij</label>
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="rememberMe"
+                required
+              />
+              <label class="form-check-label" for="rememberMe"
+                >Onthou mij</label
+              >
             </div>
-            <button type="submit" class="btn btn-primary w-100">Registreren</button>
+            <button type="submit" class="btn btn-primary w-100">
+              Registreren
+            </button>
             <div class="d-flex justify-content-center pt-2">
-                <a href="#" class="blauw">Login</a>
-              </div>
+              <a href="#" class="blauw">Login</a>
+            </div>
           </form>
         </div>
       </div>
     </main>
+    <!-- ...existing code... -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
