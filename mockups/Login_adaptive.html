@@ -92,84 +92,110 @@
       .navbar-icon i {
         font-size: 1.5rem;
       }
+      @media (max-width: 768px) {
+        .navbar-brand img {
+          width: 60px;
+        }
+        .navbar-icon i {
+          font-size: 1.2rem;
+        }
+        .w-40 {
+          width: 100%;
+        }
+      }
+      .navbar-toggler {
+        border: none; /* Remove border */
+        background: transparent; /* Make background transparent */
+      }
+      .navbar-toggler:focus {
+        box-shadow: none; /* Remove focus outline */
+      }
     </style>
   </head>
   <body>
-    <header class="container">
-      <nav class="achtergrondDonkerGrijs navbar bg-dark-subtle">
-        <div
-          class="container d-flex justify-content-between align-items-center"
-        >
-        <a class="navbar-brand" href="#">
-          <img
-            src="/mockups/img/logobutbetter.png"
-            alt="logo"
-
-          />
-        </a>
-          <ul class="nav justify-content-center mx-auto bg-white">
-            <li class="nav-item dropdown border border-black border-end-0">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Home
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Home</a></li>
-                <li><a class="dropdown-item" href="#">Openingsuren</a></li>
-                <li><a class="dropdown-item" href="#">Contact</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown border border-black">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Optiek
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Dames</a></li>
-                <li><a class="dropdown-item" href="#">Heren</a></li>
-                <li><a class="dropdown-item" href="#">Kinderen</a></li>
-                <li><a class="dropdown-item" href="#">Zonnebrillen</a></li>
-                <li><a class="dropdown-item" href="#">Lezen</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown border border-black border-start-0">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Audiologie
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Hoorapparaten</a></li>
-                <li><a class="dropdown-item" href="#">Hoorbril</a></li>
-                <li><a class="dropdown-item" href="#">Hulptoestellen</a></li>
-                <li><a class="dropdown-item" href="#">Batterijen</a></li>
-              </ul>
-            </li>
-          </ul>
-          <a class="navbar-icon" href="#">
-            <i class="bi bi-person"></i>
+    <header class="container-fluid">
+      <nav class="achtergrondDonkerGrijs navbar navbar-expand-lg bg-dark-subtle">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/mockups/img/logobutbetter.png" alt="logo" />
           </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <!-- Replace the span with your preferred icon -->
+            <i class="bi bi-list"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Home
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Home</a></li>
+                  <li><a class="dropdown-item" href="#">Openingsuren</a></li>
+                  <li><a class="dropdown-item" href="#">Contact</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Optiek
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Dames</a></li>
+                  <li><a class="dropdown-item" href="#">Heren</a></li>
+                  <li><a class="dropdown-item" href="#">Kinderen</a></li>
+                  <li><a class="dropdown-item" href="#">Zonnebrillen</a></li>
+                  <li><a class="dropdown-item" href="#">Lezen</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Audiologie
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Hoorapparaten</a></li>
+                  <li><a class="dropdown-item" href="#">Hoorbril</a></li>
+                  <li><a class="dropdown-item" href="#">Hulptoestellen</a></li>
+                  <li><a class="dropdown-item" href="#">Batterijen</a></li>
+                </ul>
+              </li>
+            </ul>
+            <a class="navbar-icon" href="#">
+              <i class="bi bi-person"></i>
+            </a>
+          </div>
         </div>
       </nav>
     </header>
     <!-- ...existing code... -->
-    <main class="container-md w-40 mt-5 pb-5 pt-3 bg-secondary-subtle rounded">
+    <main class="container w-100 mt-5 pb-5 pt-3 bg-secondary-subtle rounded">
       <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 col-lg-6">
           <h2 class="text-center pb-5">Login</h2>
           <form>
             <div class="mb-3">
