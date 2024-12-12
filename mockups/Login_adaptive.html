@@ -66,35 +66,38 @@
               height="32"
             />
           </a>
-          <ul class="nav justify-content-center mx-auto">
+          <ul class="nav justify-content-center mx-auto bg-white">
             <li class="nav-item dropdown border border-black border-end-0">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Active
+                Home
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">Home</a></li>
+                <li><a class="dropdown-item" href="#">Openingsuren</a></li>
+                <li><a class="dropdown-item" href="#">Contact</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown  border border-black">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Link
+                Optiek
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">Dames</a></li>
+                <li><a class="dropdown-item" href="#">Heren</a></li>
+                <li><a class="dropdown-item" href="#">Kinderen</a></li>
+                <li><a class="dropdown-item" href="#">Zonnebrillen</a></li>
+                <li><a class="dropdown-item" href="#">Lezen</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown  border border-black  border-start-0">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Link
+                Audiologie
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">Hoorapparaten</a></li>
+                <li><a class="dropdown-item" href="#">Hoorbril</a></li>
+                <li><a class="dropdown-item" href="#">Hulptoestellen</a></li>
+                <li><a class="dropdown-item" href="#">Batterijen</a></li>
               </ul>
             </li>
           </ul>
@@ -104,7 +107,32 @@
         </div>
       </nav>
     </header>
-    <main></main>
+    <main class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h2 class="text-center">Register</h2>
+          <form>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" required>
+            </div>
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="confirmPassword" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+          </form>
+        </div>
+      </div>
+    </main>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
