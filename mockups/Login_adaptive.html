@@ -110,6 +110,12 @@
       .navbar-toggler:focus {
         box-shadow: none; /* Remove focus outline */
       }
+      .dropdown-item {
+        border: 1px solid black; /* Add border to dropdown items */
+      }
+      .dropdown-item:not(:last-child) {
+        border-bottom: none; /* Remove bottom border for all but the last item */
+      }
     </style>
   </head>
   <body>
@@ -134,8 +140,8 @@
             <i class="bi bi-list"></i>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item text-center dropdown border-dark border border-end-0">
+            <ul class="navbar-nav mx-auto gap-4">
+              <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
@@ -151,7 +157,8 @@
                   <li><a class="dropdown-item" href="#">Contact</a></li>
                 </ul>
               </li>
-              <li class="nav-item text-center dropdown border-dark border">
+              <div class="vr"></div>
+              <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
@@ -169,7 +176,8 @@
                   <li><a class="dropdown-item" href="#">Lezen</a></li>
                 </ul>
               </li>
-              <li class="nav-item dropdown border border-dark border-start-0 ">
+              <div class="vr"></div>
+              <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
