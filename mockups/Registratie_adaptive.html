@@ -1,13 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
     <!-- css -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* colors */
+      .bruin {
+        color: #3c3744;
+      }
+      .blauw {
+        color: #090c9b;
+      }
+
+      .btn-primary {
+        background-color: #3066be !important;
+        border-color: #3066be !important;
+      }
+      .lichtblauw {
+        color: #3066be;
+      }
+      .lichterblauw {
+        color: #b4c5e4;
+      }
+      .wit {
+        color: #fbfff1;
+      }
+      .rood {
+        color: rgb(185, 72, 27);
+      }
+      .achtergrondDonkerGrijs {
+        color: #333;
+      }
+      /* bootstrap classes */
+      .w-10 {
+        width: 10%;
+      }
+
+      .w-20 {
+        width: 20%;
+      }
+
+      .w-30 {
+        width: 30%;
+      }
+
+      .w-40 {
+        width: 40%;
+      }
+
+      .w-60 {
+        width: 60%;
+      }
+
+      .w-70 {
+        width: 70%;
+      }
+
+      .w-80 {
+        width: 80%;
+      }
+
+      .w-90 {
+        width: 90%;
+      }
+
+       /* BEGIN NAVBAR STYLE */
+      .navbar-brand img {
+        width: 80px;
+        height: auto;
+      }
+      .navbar-icon i {
+        width: 500px;
+        height: 500px;
+      }
+      .navbar-icon i {
+        font-size: 1.5rem;
+      }
+      @media (max-width: 768px) {
+        .navbar-brand img {
+          width: 60px;
+        }
+        .navbar-icon i {
+          font-size: 1.2rem;
+        }
+        .w-40 {
+          width: 100%;
+        }
+      }
+      .navbar-toggler {
+        border: none; /* Remove border */
+        background: transparent; /* Make background transparent */
+      }
+      .navbar-toggler:focus {
+        box-shadow: none; /* Remove focus outline */
+      }
+      .dropdown-item {
+        border: 1px solid black; /* Add border to dropdown items */
+      }
+      .dropdown-item:not(:last-child) {
+        border-bottom: none; /* Remove bottom border for all but the last item */
+      }
+      /* END NAVBAR STYLE */
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR DONT CHANGE -->
+    <header class="container-fluid">
+      <nav
+        class="achtergrondDonkerGrijs navbar navbar-expand-lg bg-dark-subtle"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/mockups/img/logobutbetter.png" alt="logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <!-- Replace the span with your preferred icon -->
+            <i class="bi bi-list"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto gap-4">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Home
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Home</a></li>
+                  <li><a class="dropdown-item" href="#">Openingsuren</a></li>
+                  <li><a class="dropdown-item" href="#">Contact</a></li>
+                </ul>
+              </li>
+              <div class="vr"></div>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Optiek
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Dames</a></li>
+                  <li><a class="dropdown-item" href="#">Heren</a></li>
+                  <li><a class="dropdown-item" href="#">Kinderen</a></li>
+                  <li><a class="dropdown-item" href="#">Zonnebrillen</a></li>
+                  <li><a class="dropdown-item" href="#">Lezen</a></li>
+                </ul>
+              </li>
+              <div class="vr"></div>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Audiologie
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Hoorapparaten</a></li>
+                  <li><a class="dropdown-item" href="#">Hoorbril</a></li>
+                  <li><a class="dropdown-item" href="#">Hulptoestellen</a></li>
+                  <li><a class="dropdown-item" href="#">Batterijen</a></li>
+                </ul>
+              </li>
+            </ul>
+            <a class="navbar-icon" href="#">
+              <i class="bi bi-person"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- END NAVBAR CHANGE  -->
+    <main class="container w-100 mt-5 pb-5 pt-3 bg-secondary-subtle rounded">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <h2 class="text-center pb-5">Registratie</h2>
+          <form>
+            <div class="mb-3">
+              <label for="familienaam" class="form-label"><span class="text-danger">* </span>Familienaam</label>
+              <input type="text" class="form-control" id="familienaam" required />
+            </div>
+            <div class="mb-3">
+              <label for="voornaam" class="form-label"><span class="text-danger">* </span>Voornaam</label>
+              <input type="text" class="form-control" id="voornaam" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label"><span class="text-danger">* </span>Email address</label>
+              <input type="email" class="form-control" id="email" required />
+            </div>
+            <div class="mb-3">
+              <label for="telefoonnummer" class="form-label">Telefoonnummer</label>
+              <input type="tel" class="form-control" id="telefoonnummer" />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label"><span class="text-danger">* </span>Password</label>
+              <input type="password" class="form-control" id="password" required />
+            </div>
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label"><span class="text-danger">* </span>Bevestig Wachtwoord</label>
+              <input type="password" class="form-control" id="confirmPassword" required />
+            </div>
+            <div class="form-check mb-3 w-100">
+              <input class="form-check-input" type="checkbox" value="" id="rememberMe" />
+              <label class="form-check-label" for="rememberMe">Onthou mij</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Registreren</button>
+            <div class="d-flex justify-content-center pt-2">
+                <a href="#" class="blauw">Login</a>
+              </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <!-- ...existing code... -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
