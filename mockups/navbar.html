@@ -12,10 +12,7 @@
       crossorigin="anonymous"
     />
     <!-- bootstrap icons -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
     <!-- css -->
     <link rel="stylesheet" href="style.css" />
 
@@ -29,6 +26,11 @@
       }
 
       .btn-primary {
+        background-color: #3066be !important;
+        border-color: #3066be !important;
+      }
+
+      .btn btn-outline-primary {
         background-color: #3066be !important;
         border-color: #3066be !important;
       }
@@ -56,8 +58,28 @@
         width: 20%;
       }
 
+      .w-26 {
+        width: 26%;
+      }
+
+      .w-27 {
+        width: 27%;
+      }
+
+      .w-28 {
+        width: 28%;
+      }
+
+      .w-29 {
+        width: 29%;
+      }
+
       .w-30 {
         width: 30%;
+      }
+
+      .w-35 {
+        width: 35%;
       }
 
       .w-40 {
@@ -80,7 +102,7 @@
         width: 90%;
       }
 
-       /* BEGIN NAVBAR STYLE */
+      /* BEGIN NAVBAR STYLE */
       .navbar-brand img {
         width: 80px;
         height: auto;
@@ -102,6 +124,15 @@
         .w-40 {
           width: 100%;
         }
+        .btn-outline-primary {
+          display: none; /* Hide button in mobile view */
+        }
+        .title-container {
+          justify-content: center; /* Center title in mobile view */
+        }
+        .btn-outline-primary.w-75 {
+          display: block; /* Ensure "Naar de kassa" button is visible in mobile view */
+        }
       }
       .navbar-toggler {
         border: none; /* Remove border */
@@ -110,13 +141,23 @@
       .navbar-toggler:focus {
         box-shadow: none; /* Remove focus outline */
       }
-      .dropdown-item {
-        border: 1px solid black; /* Add border to dropdown items */
-      }
-      .dropdown-item:not(:last-child) {
-        border-bottom: none; /* Remove bottom border for all but the last item */
+
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        opacity: 1;
       }
       /* END NAVBAR STYLE */
+      .rotate {
+        transform: rotate(180deg);
+      }
+      .collapse:not(.show) {
+        display: block;
+        height: 0;
+        overflow: hidden;
+      }
+      .mt-6 {
+        margin-top: 4rem !important;
+      }
     </style>
   </head>
   <body>
@@ -180,54 +221,7 @@
       </nav>
     </header>
     <!-- END NAVBAR CHANGE  -->
-    <main class="container w-100 mt-5 pb-5 pt-3 bg-secondary-subtle rounded">
-      <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
-          <h2 class="text-center pb-5">Registratie</h2>
-          <form>
-            <div class="mb-3">
-              <label for="familienaam" class="form-label"><span class="text-danger">* </span>Familienaam</label>
-              <input type="text" class="form-control" id="familienaam" required />
-              <div class="invalid-feedback">Vul uw familienaam in.</div>
-            </div>
-            <div class="mb-3">
-              <label for="voornaam" class="form-label"><span class="text-danger">* </span>Voornaam</label>
-              <input type="text" class="form-control" id="voornaam" required />
-              <div class="invalid-feedback">Vul uw voornaam in.</div>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label"><span class="text-danger">* </span>E-mailadres</label>
-              <input type="email" class="form-control" id="email" required />
-              <div class="invalid-feedback">Vul een geldig e-mailadres in.</div>
-            </div>
-            <div class="mb-3">
-              <label for="telefoonnummer" class="form-label">Telefoonnummer</label>
-              <input type="tel" class="form-control" id="telefoonnummer" pattern="[0-9]{10}" />
-              <div class="invalid-feedback">Vul een geldig telefoonnummer in (10 cijfers).</div>
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label"><span class="text-danger">* </span>Wachtwoord</label>
-              <input type="password" class="form-control" id="password" required minlength="8" />
-              <div class="invalid-feedback">Wachtwoord moet minimaal 8 tekens bevatten.</div>
-            </div>
-            <div class="mb-3">
-              <label for="confirmPassword" class="form-label"><span class="text-danger">* </span>Bevestig wachtwoord</label>
-              <input type="password" class="form-control" id="confirmPassword" required />
-              <div class="invalid-feedback">Wachtwoorden komen niet overeen.</div>
-            </div>
-            <div class="form-check mb-3 w-100">
-              <input class="form-check-input" type="checkbox" value="" id="rememberMe" />
-              <label class="form-check-label" for="rememberMe">Onthou mij</label>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Registreren</button>
-            <div class="d-flex justify-content-center pt-2">
-                <a href="#" class="blauw">Login</a>
-              </div>
-          </form>
-        </div>
-      </div>
-    </main>
-
+    <main></main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

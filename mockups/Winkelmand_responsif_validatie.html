@@ -78,6 +78,10 @@
         width: 30%;
       }
 
+      .w-35 {
+        width: 35%;
+      }
+
       .w-40 {
         width: 40%;
       }
@@ -119,6 +123,15 @@
         }
         .w-40 {
           width: 100%;
+        }
+        .btn-outline-primary {
+          display: none; /* Hide button in mobile view */
+        }
+        .title-container {
+          justify-content: center; /* Center title in mobile view */
+        }
+        .btn-outline-primary.w-75 {
+          display: block; /* Ensure "Naar de kassa" button is visible in mobile view */
         }
       }
       .navbar-toggler {
@@ -174,40 +187,41 @@
             <i class="bi bi-list"></i>
           </button>
           <div id="navbarNav" class="navbar-collapse">
-            <ul class="navbar-nav mx-auto gap-4 gap-md-2">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Home </a>
+            <ul class="navbar-nav mx-auto gap-sm-2">
+              <li class="nav-item dropdown text-center">
+                <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Home </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Home</a></li>
-                  <li><a class="dropdown-item" href="#">Openingsuren</a></li>
+                  <li><a class="dropdown-item border-bottom" href="#">Home</a></li>
+                  <li><a class="dropdown-item border-bottom" href="#">Openingsuren</a></li>
                   <li><a class="dropdown-item" href="#">Contact</a></li>
                 </ul>
               </li>
               <li class="vr d-none d-lg-block"></li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Optiek </a>
+              <li class="nav-item dropdown text-center">
+                <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Optiek </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Dames</a></li>
-                  <li><a class="dropdown-item" href="#">Heren</a></li>
-                  <li><a class="dropdown-item" href="#">Kinderen</a></li>
-                  <li><a class="dropdown-item" href="#">Zonnebrillen</a></li>
+                  <li><a class="dropdown-item border-bottom" href="#">Dames</a></li>
+                  <li><a class="dropdown-item border-bottom" href="#">Heren</a></li>
+                  <li><a class="dropdown-item border-bottom" href="#">Kinderen</a></li>
+                  <li><a class="dropdown-item border-bottom" href="#">Zonnebrillen</a></li>
                   <li><a class="dropdown-item" href="#">Lezen</a></li>
                 </ul>
               </li>
               <li class="vr d-none d-lg-block"></li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Audiologie </a>
+              <li class="nav-item dropdown text-center">
+                <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Audiologie
+                </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Hoorapparaten</a></li>
-                  <li><a class="dropdown-item" href="#">Hoorbril</a></li>
-                  <li><a class="dropdown-item" href="#">Hulptoestellen</a></li>
+                  <li><a class="dropdown-item border-bottom" href="#">Hoorapparaten</a></li>
+                  <li><a class="dropdown-item border-bottom" href="#">Hoorbril</a></li>
+                  <li><a class="dropdown-item border-bottom" href="#">Hulptoestellen</a></li>
                   <li><a class="dropdown-item" href="#">Batterijen</a></li>
                 </ul>
               </li>
+              <a class="d-lg-none nav-link text-center" href="#"> Account </a>
             </ul>
-            <a title="icon" class="navbar-icon" href="#">
-              <i class="bi bi-person"></i>
-            </a>
+            <i title="icon" class="bi bi-person-circle navbar-icon d-none d-lg-block" style="font-size: 3rem"></i>
           </div>
         </div>
       </nav>
@@ -217,9 +231,9 @@
       <div class="container-lg">
         <!-- splits div in 2 vertically -->
         <div class="row">
-          <div class="col-12 col-md-6 min-vh-100">
+          <div class="col-12 col-md-6 fluid">
             <!-- title -->
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between title-container">
               <h2>Winkelmand</h2>
               <!-- button -->
               <button class="btn btn-outline-primary border-2">Winkel verder</button>
@@ -245,37 +259,43 @@
                   <input
                     type="number"
                     id="product-quantity"
-                    class="form-control w-27 h-10 shadow-none"
+                    class="form-control w-27 h-10 shadow-none is-invalid"
                     style="height: 30px"
                     value="1"
                     min="1"
                     placeholder="Aantal"
                     title="Product aantal"
+                    required
                   />
+                  <div class="invalid-feedback">Voer een geldig nummer in.</div>
                 </div>
-
                 <div id="product-info w-auto" class="pt-2">
                   <!-- number -->
-                  <label for="product-quantity" class="form-label m-0">Doosjes aantal:</label>
+                  <label for="box-quantity" class="form-label m-0">Doosjes aantal:</label>
                   <div class="d-flex justify-content-between">
-                    <input
-                      type="number"
-                      id="product-quantity"
-                      class="form-control w-27 h-10 shadow-none"
-                      style="height: 30px"
-                      value="1"
-                      min="1"
-                      placeholder="Aantal"
-                      title="Product aantal"
-                    />
+                    <div>
+                      <input
+                        type="number"
+                        id="box-quantity"
+                        class="form-control w-40 h-10 shadow-none is-invalid"
+                        style="height: 30px"
+                        value="1"
+                        min="1"
+                        placeholder="Aantal"
+                        title="Doosjes aantal"
+                        required
+                      />
+                      <div class="invalid-feedback">Voer een geldig nummer in.</div>
+                    </div>
                     <p class="fs-6 fw-bold">€ 50,-</p>
                   </div>
+
                   <hr />
                   <div class="d-flex justify-content-between align-items-center">
                     <p class="fs-6">Oogmeet gegevens</p>
                     <i
                       class="bi bi-chevron-down"
-                      style="font-size: 1.45rem; vertical-align: middle;"
+                      style="font-size: 1.45rem; vertical-align: middle"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseProductInfo1"
                       aria-expanded="false"
@@ -290,12 +310,14 @@
                         <h6>Oogkeuze</h6>
                         <!-- content -->
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckLeft1" />
-                          <label class="form-check-label" for="flexSwitchCheckLeft1">Linkeroog</label>
+                          <input class="form-check-input is-invalid" type="checkbox" id="flexSwitchCheckLeft3" value="" required />
+                          <label class="form-check-label" for="flexSwitchCheckLeft3">Linkeroog</label>
+                          <div class="invalid-feedback">Selecteer een optie.</div>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckRight1" />
-                          <label class="form-check-label" for="flexSwitchCheckRight1">Rechteroog</label>
+                          <input class="form-check-input is-invalid" type="checkbox" id="flexSwitchCheckRight3" value="" required />
+                          <label class="form-check-label" for="flexSwitchCheckRight3">Rechteroog</label>
+                          <div class="invalid-feedback">Selecteer een optie.</div>
                         </div>
                       </div>
                       <div class="w-20">
@@ -336,29 +358,34 @@
                   <input
                     type="number"
                     id="product-quantity"
-                    class="form-control w-27 h-10 shadow-none"
+                    class="form-control w-27 h-10 shadow-none is-invalid"
                     style="height: 30px"
                     value="1"
                     min="1"
                     placeholder="Aantal"
                     title="Product aantal"
+                    required
                   />
+                  <div class="invalid-feedback">Voer een geldig nummer in.</div>
                 </div>
-
                 <div id="product-info w-auto" class="pt-2">
                   <!-- number -->
-                  <label for="product-quantity" class="form-label m-0">Doosjes aantal:</label>
+                  <label for="box-quantity" class="form-label m-0">Doosjes aantal:</label>
                   <div class="d-flex justify-content-between">
-                    <input
-                      type="number"
-                      id="product-quantity"
-                      class="form-control w-27 h-10 shadow-none"
-                      style="height: 30px"
-                      value="1"
-                      min="1"
-                      placeholder="Aantal"
-                      title="Product aantal"
-                    />
+                    <div>
+                      <input
+                        type="number"
+                        id="box-quantity"
+                        class="form-control w-40 h-10 shadow-none is-invalid"
+                        style="height: 30px"
+                        value="1"
+                        min="1"
+                        placeholder="Aantal"
+                        title="Doosjes aantal"
+                        required
+                      />
+                      <div class="invalid-feedback">Voer een geldig nummer in.</div>
+                    </div>
                     <p class="fs-6 fw-bold">€ 50,-</p>
                   </div>
                   <hr />
@@ -366,7 +393,7 @@
                     <p class="fs-6">Oogmeet gegevens</p>
                     <i
                       class="bi bi-chevron-down"
-                      style="font-size: 1.45rem; vertical-align: middle;"
+                      style="font-size: 1.45rem; vertical-align: middle"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseProductInfo2"
                       aria-expanded="false"
@@ -381,12 +408,14 @@
                         <h6>Oogkeuze</h6>
                         <!-- content -->
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckLeft2" />
-                          <label class="form-check-label" for="flexSwitchCheckLeft2">Linkeroog</label>
+                          <input class="form-check-input is-invalid" type="checkbox" id="flexSwitchCheckLeft3" value="" required />
+                          <label class="form-check-label" for="flexSwitchCheckLeft3">Linkeroog</label>
+                          <div class="invalid-feedback">Selecteer een optie.</div>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckRight2" />
-                          <label class="form-check-label" for="flexSwitchCheckRight2">Rechteroog</label>
+                          <input class="form-check-input is-invalid" type="checkbox" id="flexSwitchCheckRight3" value="" required />
+                          <label class="form-check-label" for="flexSwitchCheckRight3">Rechteroog</label>
+                          <div class="invalid-feedback">Selecteer een optie.</div>
                         </div>
                       </div>
                       <div class="w-20">
@@ -427,29 +456,34 @@
                   <input
                     type="number"
                     id="product-quantity"
-                    class="form-control w-27 h-10 shadow-none"
+                    class="form-control w-27 h-10 shadow-none is-invalid"
                     style="height: 30px"
                     value="1"
                     min="1"
                     placeholder="Aantal"
                     title="Product aantal"
+                    required
                   />
+                  <div class="invalid-feedback">Voer een geldig nummer in.</div>
                 </div>
-
                 <div id="product-info w-auto" class="pt-2">
                   <!-- number -->
-                  <label for="product-quantity" class="form-label m-0">Doosjes aantal:</label>
+                  <label for="box-quantity" class="form-label m-0">Doosjes aantal:</label>
                   <div class="d-flex justify-content-between">
-                    <input
-                      type="number"
-                      id="product-quantity"
-                      class="form-control w-27 h-10 shadow-none"
-                      style="height: 30px"
-                      value="1"
-                      min="1"
-                      placeholder="Aantal"
-                      title="Product aantal"
-                    />
+                    <div>
+                      <input
+                        type="number"
+                        id="box-quantity"
+                        class="form-control w-40 h-10 shadow-none is-invalid"
+                        style="height: 30px"
+                        value="1"
+                        min="1"
+                        placeholder="Aantal"
+                        title="Doosjes aantal"
+                        required
+                      />
+                      <div class="invalid-feedback">Voer een geldig nummer in.</div>
+                    </div>
                     <p class="fs-6 fw-bold">€ 50,-</p>
                   </div>
                   <hr />
@@ -457,7 +491,7 @@
                     <p class="fs-6">Oogmeet gegevens</p>
                     <i
                       class="bi bi-chevron-down"
-                      style="font-size: 1.45rem; vertical-align: middle;"
+                      style="font-size: 1.45rem; vertical-align: middle"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseProductInfo3"
                       aria-expanded="false"
@@ -472,12 +506,14 @@
                         <h6>Oogkeuze</h6>
                         <!-- content -->
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckLeft3" />
+                          <input class="form-check-input is-invalid" type="checkbox" id="flexSwitchCheckLeft3" value="" required />
                           <label class="form-check-label" for="flexSwitchCheckLeft3">Linkeroog</label>
+                          <div class="invalid-feedback">Selecteer een optie.</div>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckRight3" />
+                          <input class="form-check-input is-invalid" type="checkbox" id="flexSwitchCheckRight3" value="" required />
                           <label class="form-check-label" for="flexSwitchCheckRight3">Rechteroog</label>
+                          <div class="invalid-feedback">Selecteer een optie.</div>
                         </div>
                       </div>
                       <div class="w-20">
@@ -497,18 +533,18 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 min-vh-100">
+          <div class="col-12 col-md-6">
             <div class="d-flex flex-column justify-content-center align-items-center mt-6">
               <h2 class="fw-bold">Overzicht</h2>
               <hr class="w-75 border border-1 border-dark" />
-                <div class="d-flex justify-content-between w-75 mb-1 p-0">
+              <div class="d-flex justify-content-between w-75 mb-1 p-0">
                 <p class="fs-6 mb-0 p-0">Bestelwaarde</p>
                 <p class="fs-6 mb-0 p-0">€ 150,-</p>
-                </div>
-                <div class="d-flex justify-content-between w-75 mb-3 p-0">
+              </div>
+              <div class="d-flex justify-content-between w-75 mb-3 p-0">
                 <p class="fs-6 mb-0 p-0">Aantal producten</p>
                 <p class="fs-6 mb-0 p-0">3</p>
-                </div>
+              </div>
 
               <!-- total -->
               <div class="d-flex justify-content-between w-75">
@@ -517,6 +553,8 @@
               </div>
               <!-- button naar kassa -->
               <button class="btn btn-outline-primary border-2 w-75">Naar de kassa</button>
+              <!-- on mobile add "Winkel verder button" -->
+              <button class="btn btn-outline-primary border-2 w-75 mt-3 d-md-none">Winkel verder</button>
             </div>
           </div>
         </div>
