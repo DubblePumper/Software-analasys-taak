@@ -148,6 +148,12 @@
         .btn-outline-primary {
           display: block; /* Ensure "Ga verder zonder account" and "Inloggen" buttons are visible in mobile view */
         }
+        .product-section {
+          order: 1;
+        }
+        .guest-login-section {
+          order: 2;
+        }
       }
       .navbar-toggler {
         border: none; /* Remove border */
@@ -247,9 +253,9 @@
       <div class="container-lg">
         <!-- splits div in 2 vertically -->
         <div class="row">
-          <div class="col-12 col-md-6 d-flex flex-column justify-items-center align-items-center">
-            <div class="w-70">
-              <div class="d-flex flex-column my-4 border border-2 px-5 py-3 shadow rounded">
+          <section class="col-12 col-md-6 d-flex flex-column justify-items-center align-items-center order-md-1 order-2">
+            <div class="w-100 w-sm-70">
+              <div class="d-flex flex-column my-4 border border-2 px-5 py-3 shadow rounded d-none d-md-flex">
                 <h2>Reken af als gast</h2>
                 <p class="fs-6">Je kunt in de volgende stap een account aanmaken.</p>
                 <button class="btn btn-outline-primary border-2">Ga verder zonder account</button>
@@ -270,15 +276,18 @@
                   </div>
                   <a href="#" class="blauw">Wachwoord vergeten?</a>
                   <button class="btn btn-outline-primary border-2 mt-4 w-100" type="submit">Inloggen</button>
+                  <div class="d-flex justify-content-center">
+                    <button class="btn btn-outline-primary border-2 mt-2 w-75 d-md-none" type="button">Ga verder zonder account</button>
+                  </div>
                 </form>
-                <span href="#" class="btn btn-link text-start mt-2 p-0"><i class="bi bi-chevron-left"></i> Terug naar winkelmand</span>
+                <span href="#" class="btn btn-link text-start mt-2 p-0 text-center text-md-start"><i class="bi bi-chevron-left"></i> Terug naar winkelmand</span>
               </div>
             </div>
-          </div>
+          </section>
           <!-- other side -->
-          <div class="col-12 col-md-6 d-flex flex-column justify-items-center align-items-center">
+          <section class="col-12 col-md-6 d-flex flex-column justify-items-center align-items-center order-md-2 order-1">
             <div class="w-100">
-              <div class="d-flex flex-column my-4  w-100">
+              <div class="d-flex flex-column my-4 w-100">
                 <h1 class="px-3 py-2">Winkelmand</h1>
                 <!-- product 1 -->
                 <div class="row mt-3 w-100 product-container border border-2 shadow rounded mx-0">
@@ -570,18 +579,18 @@
                 <!-- end product 3 -->
                 <!-- overzicht -->
                 <div class="d-flex flex-column justify-content-center align-items-center mt-4">
-                  <h2 class="fw-bold">Overzicht</h2>
-                  <hr class="w-75 border border-1 border-dark" />
-                  <div class="d-flex justify-content-between w-75 mb-1 p-0">
+                  <h2 class="fw-bold w-100 text-start">Overzicht</h2>
+                  <hr class="w-100 border border-1 border-dark" />
+                  <div class="d-flex justify-content-between w-100 mb-1 p-0">
                     <p class="fs-6 mb-0 p-0">Bestelwaarde</p>
                     <p class="fs-6 mb-0 p-0">€ 120,-</p>
                   </div>
-                  <div class="d-flex justify-content-between w-75 mb-3 p-0">
+                  <div class="d-flex justify-content-between w-100 mb-3 p-0">
                     <p class="fs-6 mb-0 p-0">Aantal producten</p>
                     <p class="fs-6 mb-0 p-0">3</p>
                   </div>
                   <!-- total -->
-                  <div class="d-flex justify-content-between w-75">
+                  <div class="d-flex justify-content-between w-100">
                     <p class="fs-6 fw-bold">Totaal</p>
                     <p class="fs-6">€ 120,-</p>
                   </div>
@@ -589,7 +598,7 @@
                 <!-- end overzicht -->
               </div>
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </main>
