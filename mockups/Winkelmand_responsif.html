@@ -129,6 +129,22 @@
         .btn-outline-primary.w-75 {
           display: block; /* Ensure "Naar de kassa" button is visible in mobile view */
         }
+        .product-container {
+          flex-direction: column;
+        }
+        .product-image {
+          order: -1;
+          width: 100%;
+          background-color: #333; /* Ensure background color is retained */
+          border-radius: .375rem .375rem 0 0; /* Change to rounded-top */
+        }
+        .product-image img {
+          width: 100%; /* Ensure image is full width */
+        }
+        .col-8 {
+          margin-top: 5%;
+          width: 100%; /* Ensure product information is full width */
+        }
       }
       .navbar-toggler {
         border: none; /* Remove border */
@@ -153,6 +169,10 @@
       }
       .mt-6 {
         margin-top: 4rem !important;
+      }
+      * {
+        box-sizing: border-box;
+        font-family: Helvetica, Arial, sans-serif;
       }
     </style>
   </head>
@@ -229,8 +249,8 @@
               <button class="btn btn-outline-primary border-2">Winkel verder</button>
             </div>
             <!-- product -->
-            <div class="row mt-3 shadow me-1 rounded p-2">
-              <div class="col-4 bg-dark p-1 rounded-start d-flex align-items-start">
+            <div class="row mt-3 shadow me-1 rounded p-2 product-container">
+              <div class="col-4 bg-dark p-1 rounded-start d-flex align-items-start product-image">
                 <!-- Image content -->
                 <img src="/mockups/img/product1.png" class="img-fluid" alt="Product Image" />
               </div>
@@ -320,8 +340,8 @@
             </div>
 
             <!-- end product -->
-            <div class="row mt-3 shadow me-1 rounded p-2">
-              <div class="col-4 bg-dark p-1 rounded-start d-flex align-items-start">
+            <div class="row mt-3 shadow me-1 rounded p-2 product-container">
+              <div class="col-4 bg-dark p-1 rounded-start d-flex align-items-start product-image">
                 <!-- Image content -->
                 <img src="/mockups/img/product1.png" class="img-fluid" alt="Product Image" />
               </div>
@@ -411,8 +431,8 @@
             </div>
 
             <!-- end product -->
-            <div class="row mt-3 shadow me-1 rounded p-2">
-              <div class="col-4 bg-dark p-1 rounded-start d-flex align-items-start">
+            <div class="row mt-3 shadow me-1 rounded p-2 product-container">
+              <div class="col-4 bg-dark p-1 rounded-start d-flex align-items-start product-image">
                 <!-- Image content -->
                 <img src="/mockups/img/product1.png" class="img-fluid" alt="Product Image" />
               </div>
@@ -486,7 +506,6 @@
                       </div>
                       <div class="w-20">
                         <div class="vr mx-2 h-100"></div>
-                        a
                       </div>
 
                       <div class="w-40">

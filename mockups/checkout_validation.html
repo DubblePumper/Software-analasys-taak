@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* colors */
+      .bruin {
+        color: #3c3744;
+      }
+      .blauw {
+        color: #090c9b;
+      }
+
+      .btn-primary {
+        background-color: #3066be !important;
+        border-color: #3066be !important;
+      }
+
+      .btn btn-outline-primary {
+        background-color: #3066be !important;
+        border-color: #3066be !important;
+      }
+      .lichtblauw {
+        color: #3066be;
+      }
+      .lichterblauw {
+        color: #b4c5e4;
+      }
+      .wit {
+        color: #fbfff1;
+      }
+      .rood {
+        color: rgb(185, 72, 27);
+      }
+      .achtergrondDonkerGrijs {
+        color: #333;
+      }
+      /* bootstrap classes */
+      .w-10 {
+        width: 10%;
+      }
+
+      .w-20 {
+        width: 20%;
+      }
+
+      .w-26 {
+        width: 26%;
+      }
+
+      .w-27 {
+        width: 27%;
+      }
+
+      .w-28 {
+        width: 28%;
+      }
+
+      .w-29 {
+        width: 29%;
+      }
+
+      .w-30 {
+        width: 30%;
+      }
+
+      .w-40 {
+        width: 40%;
+      }
+
+      .w-60 {
+        width: 60%;
+      }
+
+      .w-70 {
+        width: 70%;
+      }
+
+      .w-80 {
+        width: 80%;
+      }
+
+      .w-90 {
+        width: 90%;
+      }
+
+      /* BEGIN NAVBAR STYLE */
+      .navbar-brand img {
+        width: 80px;
+        height: auto;
+      }
+      .navbar-icon i {
+        width: 500px;
+        height: 500px;
+      }
+      .navbar-icon i {
+        font-size: 1.5rem;
+      }
+      @media (max-width: 768px) {
+        .navbar-brand img {
+          width: 60px;
+        }
+        .navbar-icon i {
+          font-size: 1.2rem;
+        }
+        .w-40 {
+          width: 100%;
+        }
+        .btn-outline-primary {
+          display: none; /* Hide button in mobile view */
+        }
+        .title-container {
+          justify-content: center; /* Center title in mobile view */
+        }
+        .btn-outline-primary.w-75 {
+          display: block; /* Ensure "Naar de kassa" button is visible in mobile view */
+        }
+        .product-container {
+          flex-direction: column;
+        }
+        .product-image {
+          order: -1;
+          width: 100%;
+          background-color: #333; /* Ensure background color is retained */
+          border-radius: 0.375rem 0.375rem 0 0; /* Change to rounded-top */
+        }
+        .product-image img {
+          width: 100%; /* Ensure image is full width */
+        }
+        .col-8 {
+          margin-top: 5%;
+          width: 100%; /* Ensure product information is full width */
+        }
+        .btn-outline-primary {
+          display: block; /* Ensure "Ga verder zonder account" and "Inloggen" buttons are visible in mobile view */
+        }
+      }
+      .navbar-toggler {
+        border: none; /* Remove border */
+        background: transparent; /* Make background transparent */
+      }
+      .navbar-toggler:focus {
+        box-shadow: none; /* Remove focus outline */
+      }
+
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        opacity: 1;
+      }
+      /* END NAVBAR STYLE */
+      .rotate {
+        transform: rotate(180deg);
+      }
+      .collapse:not(.show) {
+        display: block;
+        height: 0;
+        overflow: hidden;
+      }
+      .mt-6 {
+        margin-top: 4rem !important;
+      }
+
+      * {
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      .product-container {
+        padding: 1rem; /* Add padding to the product container */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR DONT CHANGE -->
+    <header class="container-fluid">
+      <nav class="mt-4 navbar navbar-expand-lg bg-dark-subtle rounded">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/mockups/img/logobutbetter.png" alt="logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <!-- Replace the span with your preferred icon -->
+            <i class="bi bi-list"></i>
+          </button>
+          <div id="navbarNav" class="navbar-collapse">
+            <ul class="navbar-nav mx-auto gap-sm-2">
+              <li class="nav-item dropdown text-center">
+                <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Home </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item border-bottom" href="#">Home</a></li>
+                  <li><a class="dropdown-item border-bottom" href="#">Openingsuren</a></li>
+                  <li><a class="dropdown-item" href="#">Contact</a></li>
+                </ul>
+              </li>
+              <li class="vr d-none d-lg-block"></li>
+              <li class="nav-item dropdown text-center">
+                <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Optiek </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item border-bottom" href="#">Dames</a></li>
+                  <li><a class="dropdown-item border-bottom" href="#">Heren</a></li>
+                  <li><a class="dropdown-item border-bottom" href="#">Kinderen</a></li>
+                  <li><a class="dropdown-item border-bottom" href="#">Zonnebrillen</a></li>
+                  <li><a class="dropdown-item" href="#">Lezen</a></li>
+                </ul>
+              </li>
+              <li class="vr d-none d-lg-block"></li>
+              <li class="nav-item dropdown text-center">
+                <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Audiologie
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item border-bottom" href="#">Hoorapparaten</a></li>
+                  <li><a class="dropdown-item border-bottom" href="#">Hoorbril</a></li>
+                  <li><a class="dropdown-item border-bottom" href="#">Hulptoestellen</a></li>
+                  <li><a class="dropdown-item" href="#">Batterijen</a></li>
+                </ul>
+              </li>
+              <a class="d-lg-none nav-link text-center" href="#"> Account </a>
+            </ul>
+            <i title="icon" class="bi bi-person-circle navbar-icon d-none d-lg-block" style="font-size: 3rem"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- END NAVBAR CHANGE  -->
+    <main class="w-100 mt-5 mb-5">
+      <div class="container-lg">
+        <!-- splits div in 2 vertically -->
+        <div class="row">
+          <div class="col-12 col-md-6 d-flex flex-column justify-items-center align-items-center">
+            <div class="w-70">
+              <div class="d-flex flex-column my-4 border border-2 px-5 py-3 shadow rounded">
+                <h2>Reken af als gast</h2>
+                <p class="fs-6">Je kunt in de volgende stap een account aanmaken.</p>
+                <button class="btn btn-outline-primary border-2">Ga verder zonder account</button>
+              </div>
+              <div class="d-flex flex-column my-4 border border-2 px-5 py-3 shadow rounded">
+                <h2>Log in</h2>
+                <p class="fs-6">Reken snel af met bestaande gegevens</p>
+                <form action="" class="mt-3 needs-validation" novalidate>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Emailadres</label>
+                    <input type="email" class="form-control is-invalid" id="exampleInputEmail1" aria-describedby="emailHelp" required />
+                    <div class="invalid-feedback">Voer een geldig emailadres in.</div>
+                  </div>
+                  <div class="mb-2">
+                    <label for="exampleInputPassword1" class="form-label">Wachtwoord</label>
+                    <input type="password" class="form-control is-invalid" id="exampleInputPassword1" required />
+                    <div class="invalid-feedback">Voer een geldig wachtwoord in.</div>
+                  </div>
+                  <a href="#" class="blauw">Wachwoord vergeten?</a>
+                  <button class="btn btn-outline-primary border-2 mt-4 w-100" type="submit">Inloggen</button>
+                </form>
+                <span href="#" class="btn btn-link text-start mt-2 p-0"><i class="bi bi-chevron-left"></i> Terug naar winkelmand</span>
+              </div>
+            </div>
+          </div>
+          <!-- other side -->
+          <div class="col-12 col-md-6 d-flex flex-column justify-items-center align-items-center">
+            <div class="w-100">
+              <div class="d-flex flex-column my-4  w-100">
+                <h1 class="px-3 py-2">Winkelmand</h1>
+                <!-- product 1 -->
+                <div class="row mt-3 w-100 product-container border border-2 shadow rounded mx-0">
+                  <div class="col-4 bg-dark p-1 rounded-start d-flex align-items-start product-image">
+                    <!-- Image content -->
+                    <img src="/mockups/img/product1.png" class="img-fluid" alt="Product Image" />
+                  </div>
+                  <div class="col-8">
+                    <!-- Text content -->
+                    <div id="title">
+                      <div id="top" class="d-flex justify-content-between m-0 p-0 h-auto">
+                        <h5 class="lichtblauw">Bausch + Lomb Ultra for astigmatism</h5>
+                        <i class="bi bi-x-lg" style="font-size: 1.45rem"></i>
+                      </div>
+                      <p class="fs-6">Multifocale lenzen, 1 maand</p>
+                    </div>
+                    <div id="product-info">
+                      <!-- number -->
+                      <label for="product-quantity" class="form-label m-0">Product aantal:</label>
+                      <input
+                        type="number"
+                        id="product-quantity"
+                        class="form-control w-27 h-10 shadow-none is-invalid"
+                        style="height: 30px"
+                        value="1"
+                        min="1"
+                        placeholder="Aantal"
+                        title="Product aantal"
+                        required
+                      />
+                      <div class="invalid-feedback">Voer een geldig nummer in.</div>
+                    </div>
+
+                    <div id="product-info w-auto" class="pt-2">
+                      <!-- number -->
+                      <label for="product-quantity" class="form-label m-0">Doosjes aantal:</label>
+                      <div class="d-flex justify-content-between">
+                        <input
+                          type="number"
+                          id="product-quantity"
+                          class="form-control w-27 h-10 shadow-none is-invalid"
+                          style="height: 30px"
+                          value="1"
+                          min="1"
+                          placeholder="Aantal"
+                          title="Product aantal"
+                          required
+                        />
+                        <p class="fs-6 fw-bold">€ 50,-</p>
+                      </div>
+                      <hr />
+                      <div class="d-flex justify-content-between align-items-center">
+                        <p class="fs-6">Oogmeet gegevens</p>
+                        <i
+                          class="bi bi-chevron-down"
+                          style="font-size: 1.45rem; vertical-align: middle"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseProductInfo1"
+                          aria-expanded="false"
+                          aria-controls="collapseProductInfo1"
+                        ></i>
+                      </div>
+                      <div class="collapse" id="collapseProductInfo1">
+                        <!-- splits in 2 horizontally -->
+                        <div class="d-flex justify-content-between">
+                          <div class="w-40">
+                            <!-- title -->
+                            <h6>Oogkeuze</h6>
+                            <!-- content -->
+                            <div class="form-check">
+                              <input class="form-check-input is-invalid" type="checkbox" id="flexSwitchCheckLeft1" value="" required />
+                              <label class="form-check-label" for="flexSwitchCheckLeft1">Linkeroog</label>
+                              <div class="invalid-feedback">Selecteer een optie.</div>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input is-invalid" type="checkbox" id="flexSwitchCheckRight1" value="" required />
+                              <label class="form-check-label" for="flexSwitchCheckRight1">Rechteroog</label>
+                              <div class="invalid-feedback">Selecteer een optie.</div>
+                            </div>
+                          </div>
+                          <div class="w-20">
+                            <div class="vr mx-2 h-100"></div>
+                          </div>
+
+                          <div class="w-40">
+                            <!-- title -->
+                            <h6>Sterkte</h6>
+                            <!-- content -->
+                            <p class="m-0 p-0"><span class="fw-bold">-</span> 5.75 <span class="fw-bold">+</span></p>
+                            <p><span class="fw-bold">-</span> 3.25 <span class="fw-bold">+</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end product 1 -->
+                <!-- product 2 -->
+                <div class="row mt-3 w-100 product-container border border-2 shadow rounded mx-0">
+                  <div class="col-4 bg-dark p-1 rounded-start d-flex align-items-start product-image">
+                    <!-- Image content -->
+                    <img src="/mockups/img/product2.png" class="img-fluid" alt="Product Image" />
+                  </div>
+                  <div class="col-8">
+                    <!-- Text content -->
+                    <div id="title">
+                      <div id="top" class="d-flex justify-content-between m-0 p-0 h-auto">
+                        <h5 class="lichtblauw">Acuvue Oasys for Astigmatism</h5>
+                        <i class="bi bi-x-lg" style="font-size: 1.45rem"></i>
+                      </div>
+                      <p class="fs-6">Toric lenses, 2 weeks</p>
+                    </div>
+                    <div id="product-info">
+                      <!-- number -->
+                      <label for="product-quantity-2" class="form-label m-0">Product aantal:</label>
+                      <input
+                        type="number"
+                        id="product-quantity-2"
+                        class="form-control w-27 h-10 shadow-none is-invalid"
+                        style="height: 30px"
+                        value="1"
+                        min="1"
+                        placeholder="Aantal"
+                        title="Product aantal"
+                        required
+                      />
+                      <div class="invalid-feedback">Voer een geldig nummer in.</div>
+                    </div>
+
+                    <div id="product-info-2 w-auto" class="pt-2">
+                      <!-- number -->
+                      <label for="product-quantity-2" class="form-label m-0">Doosjes aantal:</label>
+                      <div class="d-flex justify-content-between">
+                        <input
+                          type="number"
+                          id="product-quantity-2"
+                          class="form-control w-27 h-10 shadow-none is-invalid"
+                          style="height: 30px"
+                          value="1"
+                          min="1"
+                          placeholder="Aantal"
+                          title="Product aantal"
+                          required
+                        />
+                        <p class="fs-6 fw-bold">€ 40,-</p>
+                      </div>
+                      <hr />
+                      <div class="d-flex justify-content-between align-items-center">
+                        <p class="fs-6">Oogmeet gegevens</p>
+                        <i
+                          class="bi bi-chevron-down"
+                          style="font-size: 1.45rem; vertical-align: middle"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseProductInfo2"
+                          aria-expanded="false"
+                          aria-controls="collapseProductInfo2"
+                        ></i>
+                      </div>
+                      <div class="collapse" id="collapseProductInfo2">
+                        <!-- splits in 2 horizontally -->
+                        <div class="d-flex justify-content-between">
+                          <div class="w-40">
+                            <!-- title -->
+                            <h6>Oogkeuze</h6>
+                            <!-- content -->
+                            <div class="form-check">
+                              <input class="form-check-input is-invalid" type="checkbox" id="flexSwitchCheckLeft2" value="" required />
+                              <label class="form-check-label" for="flexSwitchCheckLeft2">Linkeroog</label>
+                              <div class="invalid-feedback">Selecteer een optie.</div>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input is-invalid" type="checkbox" id="flexSwitchCheckRight2" value="" required />
+                              <label class="form-check-label" for="flexSwitchCheckRight2">Rechteroog</label>
+                              <div class="invalid-feedback">Selecteer een optie.</div>
+                            </div>
+                          </div>
+                          <div class="w-20">
+                            <div class="vr mx-2 h-100"></div>
+                          </div>
+
+                          <div class="w-40">
+                            <!-- title -->
+                            <h6>Sterkte</h6>
+                            <!-- content -->
+                            <p class="m-0 p-0"><span class="fw-bold">-</span> 4.25 <span class="fw-bold">+</span></p>
+                            <p><span class="fw-bold">-</span> 2.75 <span class="fw-bold">+</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end product 2 -->
+                <!-- product 3 -->
+                <div class="row mt-3 w-100 product-container border border-2 shadow rounded mx-0">
+                  <div class="col-4 bg-dark p-1 rounded-start d-flex align-items-start product-image">
+                    <!-- Image content -->
+                    <img src="/mockups/img/product3.png" class="img-fluid" alt="Product Image" />
+                  </div>
+                  <div class="col-8">
+                    <!-- Text content -->
+                    <div id="title">
+                      <div id="top" class="d-flex justify-content-between m-0 p-0 h-auto">
+                        <h5 class="lichtblauw">Dailies AquaComfort Plus</h5>
+                        <i class="bi bi-x-lg" style="font-size: 1.45rem"></i>
+                      </div>
+                      <p class="fs-6">Daily disposable lenses</p>
+                    </div>
+                    <div id="product-info">
+                      <!-- number -->
+                      <label for="product-quantity-3" class="form-label m-0">Product aantal:</label>
+                      <input
+                        type="number"
+                        id="product-quantity-3"
+                        class="form-control w-27 h-10 shadow-none is-invalid"
+                        style="height: 30px"
+                        value="1"
+                        min="1"
+                        placeholder="Aantal"
+                        title="Product aantal"
+                        required
+                      />
+                      <div class="invalid-feedback">Voer een geldig nummer in.</div>
+                    </div>
+
+                    <div id="product-info-3 w-auto" class="pt-2">
+                      <!-- number -->
+                      <label for="product-quantity-3" class="form-label m-0">Doosjes aantal:</label>
+                      <div class="d-flex justify-content-between">
+                        <input
+                          type="number"
+                          id="product-quantity-3"
+                          class="form-control w-27 h-10 shadow-none is-invalid"
+                          style="height: 30px"
+                          value="1"
+                          min="1"
+                          placeholder="Aantal"
+                          title="Product aantal"
+                          required
+                        />
+                        <p class="fs-6 fw-bold">€ 30,-</p>
+                      </div>
+                      <hr />
+                      <div class="d-flex justify-content-between align-items-center">
+                        <p class="fs-6">Oogmeet gegevens</p>
+                        <i
+                          class="bi bi-chevron-down"
+                          style="font-size: 1.45rem; vertical-align: middle"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseProductInfo3"
+                          aria-expanded="false"
+                          aria-controls="collapseProductInfo3"
+                        ></i>
+                      </div>
+                      <div class="collapse" id="collapseProductInfo3">
+                        <!-- splits in 2 horizontally -->
+                        <div class="d-flex justify-content-between">
+                          <div class="w-40">
+                            <!-- title -->
+                            <h6>Oogkeuze</h6>
+                            <!-- content -->
+                            <div class="form-check">
+                              <input class="form-check-input is-invalid" type="checkbox" id="flexSwitchCheckLeft3" value="" required />
+                              <label class="form-check-label" for="flexSwitchCheckLeft3">Linkeroog</label>
+                              <div class="invalid-feedback">Selecteer een optie.</div>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input is-invalid" type="checkbox" id="flexSwitchCheckRight3" value="" required />
+                              <label class="form-check-label" for="flexSwitchCheckRight3">Rechteroog</label>
+                              <div class="invalid-feedback">Selecteer een optie.</div>
+                            </div>
+                          </div>
+                          <div class="w-20">
+                            <div class="vr mx-2 h-100"></div>
+                          </div>
+
+                          <div class="w-40">
+                            <!-- title -->
+                            <h6>Sterkte</h6>
+                            <!-- content -->
+                            <p class="m-0 p-0"><span class="fw-bold">-</span> 3.75 <span class="fw-bold">+</span></p>
+                            <p><span class="fw-bold">-</span> 2.25 <span class="fw-bold">+</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end product 3 -->
+                <!-- overzicht -->
+                <div class="d-flex flex-column justify-content-center align-items-center mt-4">
+                  <h2 class="fw-bold">Overzicht</h2>
+                  <hr class="w-75 border border-1 border-dark" />
+                  <div class="d-flex justify-content-between w-75 mb-1 p-0">
+                    <p class="fs-6 mb-0 p-0">Bestelwaarde</p>
+                    <p class="fs-6 mb-0 p-0">€ 120,-</p>
+                  </div>
+                  <div class="d-flex justify-content-between w-75 mb-3 p-0">
+                    <p class="fs-6 mb-0 p-0">Aantal producten</p>
+                    <p class="fs-6 mb-0 p-0">3</p>
+                  </div>
+                  <!-- total -->
+                  <div class="d-flex justify-content-between w-75">
+                    <p class="fs-6 fw-bold">Totaal</p>
+                    <p class="fs-6">€ 120,-</p>
+                  </div>
+                </div>
+                <!-- end overzicht -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const chevron = document.querySelector(".bi-chevron-down");
+        chevron.addEventListener("click", function () {
+          this.classList.toggle("rotate");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -133,6 +133,22 @@
         .btn-outline-primary.w-75 {
           display: block; /* Ensure "Naar de kassa" button is visible in mobile view */
         }
+        .product-container {
+          flex-direction: column;
+        }
+        .col-4 {
+          order: -1;
+          width: 100%;
+          background-color: #333; /* Ensure background color is retained */
+          border-radius: .375rem .375rem 0 0; /* Change to rounded-top */
+        }
+        .col-4 img {
+          width: 100%; /* Ensure image is full width */
+        }
+        .col-8 {
+          margin-top: 5%;
+          width: 100%; /* Ensure product information is full width */
+        }
       }
       .navbar-toggler {
         border: none; /* Remove border */
@@ -163,6 +179,10 @@
       }
       .mt-6 {
         margin-top: 4rem !important;
+      }
+      * {
+        box-sizing: border-box;
+        font-family: Helvetica, Arial, sans-serif;
       }
     </style>
   </head>

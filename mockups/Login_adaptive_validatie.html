@@ -12,10 +12,7 @@
       crossorigin="anonymous"
     />
     <!-- bootstrap icons -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
     <!-- css -->
     <link rel="stylesheet" href="style.css" />
 
@@ -80,7 +77,7 @@
         width: 90%;
       }
 
-       /* BEGIN NAVBAR STYLE */
+      /* BEGIN NAVBAR STYLE */
       .navbar-brand img {
         width: 80px;
         height: auto;
@@ -109,6 +106,10 @@
       }
       .navbar-toggler:focus {
         box-shadow: none; /* Remove focus outline */
+      }
+      * {
+        box-sizing: border-box;
+        font-family: Helvetica, Arial, sans-serif;
       }
       /* END NAVBAR STYLE */
     </style>
@@ -181,17 +182,17 @@
           <form class="row g-3">
             <div class="col-md-12">
               <label for="email" class="form-label"><span class="text-danger">* </span>E-mailadres</label>
-              <input type="email" class="form-control is-invalid" id="email" required>
+              <input type="email" class="form-control is-invalid" id="email" required />
               <div id="emailFeedback" class="invalid-feedback">Vul een geldig e-mailadres in.</div>
             </div>
             <div class="col-md-12">
               <label for="password" class="form-label"><span class="text-danger">* </span>Wachtwoord</label>
-              <input type="password" class="form-control is-invalid" id="password" required minlength="8">
+              <input type="password" class="form-control is-invalid" id="password" required minlength="8" />
               <div id="passwordFeedback" class="invalid-feedback">Wachtwoord moet minimaal 8 tekens bevatten.</div>
             </div>
             <div class="col-12">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="rememberMe" required>
+                <input class="form-check-input" type="checkbox" value="" id="rememberMe" required />
                 <label class="form-check-label" for="rememberMe">Onthoud mij</label>
               </div>
             </div>
