@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Afspraak boeken</title>
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+.blauw {
+    color: #090c9b;
+}
+.lichtblauw {
+    color: #3066be;
+}
+.lichterblauw {
+    color: #b4c5e4;
+}
+.wit {
+    color: #fbfff1;
+}
+.rood{
+    color: rgb(185, 72, 27);
+}
+form h5 {
+    color: #3066be;
+    padding-top: 20px;
+}
+form label {
+    color: #3c3744;
+}
+form h2 ~ label {
+    color: #3066be;
+}
+label span {
+    color: red;
+}
+input {
+    margin: 0 1em;
+}
+
+      /* BEGIN NAVBAR STYLE */
+      .navbar-brand img {
+        width: 80px;
+        height: auto;
+      }
+      .navbar-icon i {
+        width: 500px;
+        height: 500px;
+      }
+      .navbar-icon i {
+        font-size: 1.5rem;
+      }
+      @media (max-width: 768px) {
+        .navbar-brand img {
+          width: 60px;
+        }
+        .navbar-icon i {
+          font-size: 1.2rem;
+        }
+        .w-40 {
+          width: 100%;
+        }
+      }
+      .navbar-toggler {
+        border: none; /* Remove border */
+        background: transparent; /* Make background transparent */
+      }
+      .navbar-toggler:focus {
+        box-shadow: none; /* Remove focus outline */
+      }
+      .dropdown-item {
+        border: 1px solid black; /* Add border to dropdown items */
+      }
+      .dropdown-item:not(:last-child) {
+        border-bottom: none; /* Remove bottom border for all but the last item */
+      }
+      /* END NAVBAR STYLE */
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR DONT CHANGE -->
+    <header class="container-fluid">
+        <nav class="mt-4 navbar navbar-expand-lg bg-dark-subtle rounded">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="/mockups/img/logobutbetter.png" alt="logo" />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <!-- Replace the span with your preferred icon -->
+              <i class="bi bi-list"></i>
+            </button>
+            <div id="navbarNav" class="navbar-collapse">
+              <ul class="navbar-nav mx-auto gap-sm-2">
+                <li class="nav-item dropdown text-center">
+                  <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Home </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item border-bottom" href="#">Home</a></li>
+                    <li><a class="dropdown-item border-bottom" href="#">Openingsuren</a></li>
+                    <li><a class="dropdown-item" href="#">Contact</a></li>
+                  </ul>
+                </li>
+                <li class="vr d-none d-lg-block"></li>
+                <li class="nav-item dropdown text-center">
+                  <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Optiek </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item border-bottom" href="#">Dames</a></li>
+                    <li><a class="dropdown-item border-bottom" href="#">Heren</a></li>
+                    <li><a class="dropdown-item border-bottom" href="#">Kinderen</a></li>
+                    <li><a class="dropdown-item border-bottom" href="#">Zonnebrillen</a></li>
+                    <li><a class="dropdown-item" href="#">Lezen</a></li>
+                  </ul>
+                </li>
+                <li class="vr d-none d-lg-block"></li>
+                <li class="nav-item dropdown text-center">
+                  <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Audiologie
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item border-bottom" href="#">Hoorapparaten</a></li>
+                    <li><a class="dropdown-item border-bottom" href="#">Hoorbril</a></li>
+                    <li><a class="dropdown-item border-bottom" href="#">Hulptoestellen</a></li>
+                    <li><a class="dropdown-item" href="#">Batterijen</a></li>
+                  </ul>
+                </li>
+                <a class="d-lg-none nav-link text-center" href="#"> Winkelmand </a>
+                <a class="d-lg-none nav-link text-center" href="#"> Account </a>
+              </ul>
+              <div class="d-none d-lg-flex align-items-center">
+                <i title="icon" class="bi bi-cart navbar-icon me-3" style="font-size: 3rem"></i>
+                <i title="icon" class="bi bi-person-circle navbar-icon" style="font-size: 3rem"></i>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- END NAVBAR CHANGE  -->
+    <center>
+        <p class="h1" style="color:#090c9b">Afspraak boeken</p>
+    </center>
+    <p class="" style="padding-left: 25px;">Hier kunt u online een afspraak boeken.</br>U kunt kiezen tussen optiek en audiologie.</p>
+    <img src="img/afspraakthumbnail.jpg" alt="foto" class="img-thumbnail" style="border-radius: 20px;">
+
+    <form action="" style="padding-left:25px;padding-right: 25px;padding-bottom: 25px;">
+
+        <h5 class="lichtblauw">Type afspraak</h5>
+        <input type="radio" id="optiek" name="typeafspraak"> <label for="optiek">Optiek</label><br>
+        <input type="radio" id="audiologie" name="typeafspraak"> <label for="audiologie">Audiologie</label>
+        
+        <h5 class="lichtblauw">Optiek</h5>
+        <input type="radio"> <label for="een">Nieuw montuur en glazen - 1u</label><br>
+        <input type="radio"> <label for="twee">Oogmeting en nieuwe bril - 1u30</label><br>
+        <input type="radio"> <label for="drie">Nieuwe glazen - 45min</label><br>
+        <input type="radio"> <label for="vier">Lenscontrole - 45min</label><br>
+        <input type="radio"> <label for="vijf">Herstelling of afhaling - 30min</label><br>
+        <input type="radio"> <label for="zes">Bril afstellen / onderhoud - 15min</label>
+
+        <!--<h5 class="lichtblauw">Audiologie</h5>
+        <input type="radio"> <label for="een">Informatief gesprek - 30min</label><br>
+        <input type="radio"> <label for="twee">Eerste hoortest - 1u</label><br>
+        <input type="radio"> <label for="drie">Hoortoestel afstellen / onderhoud - 15min</label>-->
+        
+        <h5 class="lichtblauw">Datum afspraak</h5>
+        <input type="date" name="" id="" style="border-radius: 8px;padding: 3px 3px 3px 10px">
+
+        <h2 class="h2" style="color:#090c9b;padding-top: 25px;">Persoonlijke gegevens</h2>
+        <label for="naam">Naam<span>*</span></label><div style="float: right;"><a href="#">Log in</a></div><br>
+        <input type="text" class="form-control" id="naam" placeholder="Geef uw naam in" required><br>
+        <label for="naam">Voornaam<span>*</span></label><br>
+        <input type="text" class="form-control" id="voornaam" placeholder="Geef uw voornaam in" required><br>
+        <label for="naam">E-mail<span>*</span></label><br>
+        <input type="text" class="form-control" id="voornaam" placeholder="Geef uw e-mail adres in" required><br>
+        <label for="naam">Telefoon<span>*</span></label><br>
+        <input type="text" class="form-control" id="voornaam" placeholder="Geef uw telefoon nummer in" required><br>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Boek afspraak</button>
+    </form>
+  </body>
+</html>

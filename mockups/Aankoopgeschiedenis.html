@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aankoopgeschiedenis</title>
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --dark-gray: #3c3744;
+        --dark-blue: #090c9b;
+        --medium-blue: #3066be;
+        --light-blue: #b4c5e4;
+        --off-white: #ffffff;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--off-white);
+        color: var(--dark-gray);
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        max-width: 1100px;
+        width: 100%;
+        padding: 20px;
+      }
+      .navbar-brand img {
+        width: 80px;
+        height: auto;
+      }
+      .navbar-icon i {
+        width: 500px;
+        height: 500px;
+      }
+      .navbar-icon i {
+        font-size: 1.5rem;
+      }
+      @media (max-width: 768px) {
+        .navbar-brand img {
+          width: 60px;
+        }
+        .navbar-icon i {
+          font-size: 1.2rem;
+        }
+        .w-40 {
+          width: 100%;
+        }
+      }
+      .navbar-toggler {
+        border: none; /* Remove border */
+        background: transparent; /* Make background transparent */
+      }
+      .navbar-toggler:focus {
+        box-shadow: none; /* Remove focus outline */
+      }
+      .dropdown-item {
+        border: 1px solid black; /* Add border to dropdown items */
+      }
+      .dropdown-item:not(:last-child) {
+        border-bottom: none; /* Remove bottom border for all but the last item */
+      }
+
+      .account {
+        display: flex;
+        gap: 10px;
+      }
+
+      .account div {
+        width: 30px;
+        height: 30px;
+        background-color: var(--medium-blue);
+        border-radius: 50%;
+      }
+
+      main {
+        margin-top: 20px;
+      }
+
+      h1 {
+        color: var(--dark-blue);
+      }
+
+      .purchase-item {
+        display: flex;
+        gap: 20px;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--light-blue);
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .purchase-item img {
+        width: 210px;
+        height: 100px;
+        background-color: var(--light-blue);
+        border-radius: 5px;
+      }
+
+      .purchase-details {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+        row-gap: 10px;
+        flex-grow: 1;
+      }
+
+      .purchase-details label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .purchase-details input,
+      .purchase-details select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid var(--light-blue);
+        border-radius: 5px;
+      }
+
+      .return-button {
+        background-color: var(--medium-blue);
+        color: var(--off-white);
+        border: none;
+        padding: 10px 60px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: inline-block; /* Ensure buttons are inline-block elements */
+        margin-bottom: 10px; /* Add margin between buttons */
+        width: auto; /* Adjust width */
+        height: 50px; /* Ensure equal height */
+        white-space: nowrap; /* Prevent text from wrapping */
+      }
+
+      .return-button:hover {
+        background-color: var(--dark-blue);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- NAVBAR DONT CHANGE -->
+      <header class="container-fluid">
+        <nav class="mt-4 navbar navbar-expand-lg bg-dark-subtle rounded">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="/mockups/img/logobutbetter.png" alt="logo" />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <!-- Replace the span with your preferred icon -->
+              <i class="bi bi-list"></i>
+            </button>
+            <div id="navbarNav" class="navbar-collapse">
+              <ul class="navbar-nav mx-auto gap-sm-2">
+                <li class="nav-item dropdown text-center">
+                  <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Home </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item border-bottom" href="#">Home</a></li>
+                    <li><a class="dropdown-item border-bottom" href="#">Openingsuren</a></li>
+                    <li><a class="dropdown-item" href="#">Contact</a></li>
+                  </ul>
+                </li>
+                <li class="vr d-none d-lg-block"></li>
+                <li class="nav-item dropdown text-center">
+                  <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Optiek </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item border-bottom" href="#">Dames</a></li>
+                    <li><a class="dropdown-item border-bottom" href="#">Heren</a></li>
+                    <li><a class="dropdown-item border-bottom" href="#">Kinderen</a></li>
+                    <li><a class="dropdown-item border-bottom" href="#">Zonnebrillen</a></li>
+                    <li><a class="dropdown-item" href="#">Lezen</a></li>
+                  </ul>
+                </li>
+                <li class="vr d-none d-lg-block"></li>
+                <li class="nav-item dropdown text-center">
+                  <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Audiologie
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item border-bottom" href="#">Hoorapparaten</a></li>
+                    <li><a class="dropdown-item border-bottom" href="#">Hoorbril</a></li>
+                    <li><a class="dropdown-item border-bottom" href="#">Hulptoestellen</a></li>
+                    <li><a class="dropdown-item" href="#">Batterijen</a></li>
+                  </ul>
+                </li>
+                <a class="d-lg-none nav-link text-center" href="#"> Winkelmand </a>
+                <a class="d-lg-none nav-link text-center" href="#"> Account </a>
+              </ul>
+              <div class="d-none d-lg-flex align-items-center">
+                <i title="icon" class="bi bi-cart navbar-icon me-3" style="font-size: 3rem"></i>
+                <i title="icon" class="bi bi-person-circle navbar-icon" style="font-size: 3rem"></i>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- END NAVBAR CHANGE  -->
+      <main>
+        <center>
+          <h1>Aankoopgeschiedenis</h1>
+        </center>
+        <div class="purchase-item">
+          <img src="img/product1.png" alt="Lens Image" />
+          <div class="purchase-details">
+            <div>
+              <label for="lens-name-1">Lenzen naam</label>
+              Acuvue Vita for Astigmatism
+            </div>
+            <div>
+              <label for="lens-type-1">Lenstype</label>
+              Torisch
+            </div>
+            <div>
+              <label for="brand-1">Merk</label>
+              Acuvue
+            </div>
+            <div>
+              <label for="left-eye-1">Sterkte linker oog</label>
+              -5.75
+            </div>
+            <div>
+              <label for="right-eye-1">Sterkte rechter oog</label>
+              -3.75
+            </div>
+          </div>
+          <div class="d-flex flex-column  justify-content-end">
+            <button class="return-button">Retourneer</button>
+            <button class="return-button">Koop opnieuw</button>
+          </div>
+        </div>
+        <div class="purchase-item">
+          <img src="img/product1.png" alt="Lens Image" />
+          <div class="purchase-details">
+            <div>
+              <label for="lens-name-2">Lenzen naam</label>
+              iWear Oxygen
+            </div>
+            <div>
+              <label for="lens-type-2">Lenstype</label>
+              Sferisch
+            </div>
+            <div>
+              <label for="brand-2">Merk</label>
+              iWear
+            </div>
+            <div>
+              <label for="left-eye-2">Sterkte linker oog</label>
+              +2.25
+            </div>
+            <div>
+              <label for="right-eye-2">Sterkte rechter oog</label>
+              +2.50
+            </div>
+          </div>
+          <div class="d-flex flex-column  justify-content-end">
+            <button class="return-button">Retourneer</button>
+            <button class="return-button">Koop opnieuw</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
